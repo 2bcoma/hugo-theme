@@ -1,17 +1,23 @@
 {{ define "main" }}
-  <div style="margin-top: 2rem; margin-bottom: 2rem">
-    <img src="{{ .Site.Params.avatar }}" style="width: 15rem; height: 15rem"/>
-    <h2 style="">{{ .Site.Params.author }}</h1>
-    <h4 style="">{{ .Site.Params.info }}</h3>
+<div style="margin-top: 2rem; margin-bottom: 2rem">
+  <img src="{{ .Site.Params.avatar }}" style="width: 15rem; height: 15rem" />
+  <h3>{{ .Site.Params.author }}</h3>
+  <div>
+    <pre>{{ .Site.Params.info }}</pre>
   </div>
-  {{ with .Site.Params.social }}
-    {{ range $i, $e := sort . }}
-      <a class="apps-submenu-item" href="{{ .url }}">
-        <!--<h5 style="{{ if $i }}padding-left:0.5rem;margin-left: 0.3rem; border-left: 0.2rem solid black{{ end }}">{{ $e.name }}</h5>-->
-        <h5>
-          {{- $e.name -}}
-        </h5>
-      </a>
-    {{ end }}
-  {{ end }}
+</div>
+<div class="apps-header">
+  <hr />
+</div>
+{{ with .Site.Params.social }}
+{{ range $i, $e := sort . }}
+<a class="apps-submenu-item" href="{{ .url }}">
+  <!--<h5 style="{{ if $i }}padding-left:0.5rem;margin-left: 0.3rem; border-left: 0.2rem solid black{{ end }}">{{ $e.name }}</h5>-->
+  <h5>
+    {{- $e.name -}}
+  </h5>
+</a>
+{{ end }}
+{{ end }}
+<div>(c) {{ dateFormat "2006" now  }} {{ .Site.Copyright }}</div>
 {{ end }}
