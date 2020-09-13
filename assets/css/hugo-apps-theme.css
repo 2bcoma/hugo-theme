@@ -134,11 +134,11 @@ hr {
   border: 0;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  height: 1rem;
+  height: 0.5rem;
   background: black; }
 
 .apps-content hr {
-  height: 0.5rem; }
+  height: 0.1rem; }
 
 table {
   border-collapse: collapse;
@@ -149,6 +149,11 @@ table, thead, tr, th, td, tfoot, fieldset, input, textarea {
 
 thead, th {
   border-bottom-width: 0.2rem; }
+
+.img-store {
+  width: 2rem;
+  height: 2rem;
+}
 
 .apps-list, .apps-content {
   margin: 0 auto; }

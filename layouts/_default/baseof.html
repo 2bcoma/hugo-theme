@@ -12,16 +12,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-  {{ template "_internal/opengraph.html" . }}
-  {{- if not (eq .Site.Params.googleAutoAds "") -}}
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "{{ .Site.Params.googleAutoAds }}",
-      enable_page_level_ads: true
-    });
-  </script>
-  {{- end -}}
 </head>
 
 <body>
@@ -48,10 +38,8 @@
   <div class="apps-body">
     {{- block "main" . }}{{- end }}
   </div>
+  <i>(c) {{ dateFormat "2006" now  }} {{ .Site.Copyright }}</i>
   <script>hljs.initHighlightingOnLoad();</script>
-  {{- if not (eq .Site.GoogleAnalytics "") -}}
-  {{ template "_internal/google_analytics_async.html" . }}
-  {{- end -}}
 </body>
 
 </html>
