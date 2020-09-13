@@ -1,29 +1,5 @@
 {{ define "main" }}
 <div class="apps-list">
-  <!-- data/TYPENAME/ITEMNAME/hugo.json-->
-  {{ $curTypeName := ($.Permalink | path.Dir | path.Split).File }}
-  {{ range $typeName, $type := .Site.Data }}
-  {{ if eq $typeName $curTypeName }}
-  {{ range $itemName, $itemMap := $type }}
-  {{ $item := $itemMap.hugo }}
-  {{ $title := $item.title | default $itemName }}
-  {{ $itemUrl := $item.url | default (print "/" $typeName "/" $itemName | absURL) }}
-  {{ $imageUrl := $item.image | default (print "/img/no-image.svg" | absURL) }}
-  <div class="apps-app-item">
-    <div class="apps-app-icon">
-      <a href="{{- $itemUrl -}}">
-        <img src="{{- $imageUrl -}}" />
-      </a>
-    </div>
-    <div class="apps-app-name">
-      <a href="{{- $itemUrl -}}">
-        <h6>{AA</h6>
-      </a>
-    </div>
-  </div>
-  {{ end }}
-  {{ end }}
-  {{ end }}
   {{ range .Pages }}
   <div class="apps-app-item">
     <div class="apps-app-icon">
@@ -41,8 +17,5 @@
     </div>
   </div>
   {{ end }}
-</div>
-<div class="apps-header">
-  <hr />
 </div>
 {{ end }}

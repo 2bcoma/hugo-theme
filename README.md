@@ -37,10 +37,8 @@ touch apps/myapp/app.css
 
 ### Front Matter
 - title(string): title for your page
-- showTitle(boolean): whether you want to show the title
 - weight(integer): weight of your page, used for sorting
 - full(boolean): whether your page is full page or not
-- enableDisqus(boolean): whether your page uses disqus or not, even though this value is true you cannot enable disqus for full page
 - img(string): logo image for your page
 
 ### What is full page?
@@ -50,12 +48,8 @@ you can achieve this by setting full=true
 
 ### config.toml
 - baseURL(string): base url of your site
-- hasCJKLanguage(boolean): whether you support CJK language or not
-- disqusShortname(string): disqus short name
-- googleAnalytics(string): google analytics tracking id
 - title(string): title of your site
 - copyright(string): copyright of your site
-- [params]googleAutoAds(string): google_ad_client value of Google Auto Ads
 - [params]avatar(string): avatar image url of index page of your site
 - [params]author(string): your name at index page
 - [params]info(string): info string below your name at index page
@@ -65,10 +59,7 @@ you can achieve this by setting full=true
 
 ## Features
 * Responsive
-* Disqus
 * HighlightJS
-* Google Analytics
-* Open Graph
 
 ### Contribution
 Fork this repository and create an PR to dev branch.

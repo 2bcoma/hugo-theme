@@ -101,10 +101,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 110%; }
 
 p {
-  font-size: 1rem; }
+  font-size: 0.8rem;
+}
 
 pre {
-  overflow: auto; }
+  overflow: auto;
+}
 
 a {
   text-decoration: none;
@@ -132,13 +134,20 @@ a {
 
 hr {
   border: 0;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   height: 0.5rem;
   background: black; }
 
 .apps-content hr {
-  height: 0.1rem; }
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  height: 0.1rem;
+}
+
+.post-content {
+  text-align: justify;
+  font-family: monospace;
+  font-size: 0.5rem;
+}
 
 table {
   border-collapse: collapse;
@@ -159,11 +168,8 @@ thead, th {
   margin: 0 auto; }
 
 .apps-content {
-  background-color: lightgray;
   text-align: left;
   overflow: auto; }
-  .apps-content > * {
-    margin: 1rem 2rem 1rem 2rem; }
   .apps-content * {
     max-width: 100%; }
 

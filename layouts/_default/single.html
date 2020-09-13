@@ -3,16 +3,13 @@
   {{ $imageUrl := .Params.img | default (print "/img/no-image.svg" | absURL) }}
   <h3 style="text-align: center">{{.Params.title}}</h3>
   <img style="display: block; margin-left: auto; margin-right: auto; border: 0.05rem solid;" src="{{- $imageUrl -}}" />
-  {{- .Content -}}
-  <hr />
-  <div style="text-align: center;">
+  <div style="text-align: center; margin-top: 1rem;">
     <div><i>availiable on</i></div>
     <a href="{{- .Params.ios -}}"><img class="img-store" src="/img/ios.png" alt="ios store link" /></a>
     <a href="{{- .Params.android -}}"><img class="img-store" src="/img/android.png" alt="android store link" /></a>
     <div><i>since {{ dateFormat "2006-01-02" .Params.date  }}</i></div>
   </div>
-</div>
-<div class="apps-header">
   <hr />
+  <div class="post-content">{{- .Content -}}</div>
 </div>
 {{ end }}

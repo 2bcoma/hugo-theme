@@ -1,22 +1,6 @@
 {{ define "main" }}
 <div style="margin-top: 2rem; margin-bottom: 2rem">
-  <img src="{{ .Site.Params.avatar }}" style="width: 15rem; height: 15rem" />
-  <h3>{{ .Site.Params.author }}</h3>
-  <div>
-    <pre>{{ .Site.Params.info }}</pre>
-  </div>
+  <img src="{{ .Params.img }}" style="width: 15rem; height: 8rem" />
+  <div style="text-align: center;">{{- .Content -}}</div>
 </div>
-<div class="apps-header">
-  <hr />
-</div>
-{{ with .Site.Params.social }}
-{{ range $i, $e := sort . }}
-<a class="apps-submenu-item" href="{{ .url }}">
-  <!--<h5 style="{{ if $i }}padding-left:0.5rem;margin-left: 0.3rem; border-left: 0.2rem solid black{{ end }}">{{ $e.name }}</h5>-->
-  <h5>
-    {{- $e.name -}}
-  </h5>
-</a>
-{{ end }}
-{{ end }}
 {{ end }}

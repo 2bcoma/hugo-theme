@@ -1,6 +1,3 @@
-{{ if .Params.full }}
-{{- .Content -}}
-{{ else }}
 <!DOCTYPE html>
 <html>
 
@@ -38,10 +35,20 @@
   <div class="apps-body">
     {{- block "main" . }}{{- end }}
   </div>
-  <i>(c) {{ dateFormat "2006" now  }} {{ .Site.Copyright }}</i>
+  <div class="apps-header">
+    <hr />
+  </div>
+  {{ with .Site.Params.social }}
+  {{ range $i, $e := sort . }}
+  <a class="apps-submenu-item" href="{{ .url }}">
+    <h5>
+      {{- $e.name -}}
+    </h5>
+  </a>
+  {{ end }}
+  {{ end }}
+  <div><i>all rights reserved (c) {{ dateFormat "2006" now  }} {{ .Site.Copyright }}</i></div>
   <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>
-
-{{ end }}
