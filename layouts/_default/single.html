@@ -5,9 +5,15 @@
   <img style="display: block; margin-left: auto; margin-right: auto; border: 0.05rem solid;" src="{{- $imageUrl -}}" />
   <div style="text-align: center; margin-top: 1rem;">
     <div><i>availiable on</i></div>
+    {{if .Params.ios}}
     <a href="{{- .Params.ios -}}"><img class="img-store" src="/img/ios.png" alt="ios store link" /></a>
+    {{end}}
+    {{if .Params.android}}
     <a href="{{- .Params.android -}}"><img class="img-store" src="/img/android.png" alt="android store link" /></a>
+    {{end}}
+    {{if .Params.html5}}
     <a href="{{- .Params.html5 -}}"><img class="img-store" src="/img/html5.png" alt="html5 link" /></a>
+    {{end}}
     <div><i>since {{ dateFormat "2006-01-02" .Params.date  }}</i></div>
   </div>
   <hr />
